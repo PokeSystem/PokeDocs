@@ -11,23 +11,24 @@ export default defineConfig({
       { text: 'Inicio', link: '/' },
       { text: 'Documentación', link: '/documentacion/index' }
     ],
-
+    search: {
+      provider: 'local'
+    },
     sidebar: [
       {
         text: 'Inicio',
         items: [
-          { text: 'Quienes Somos?', link: '/markdown-examples' },
+          { text: 'Quienes Somos?', link: '/QuienesSomos' },
         ]
       },
       {
         text: 'Documentación',
         items: [
-          { text: 'Markdow', link: '/markdown-examples' },
+          { text: 'Markdown', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }
     ],
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]

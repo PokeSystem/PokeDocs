@@ -9,38 +9,38 @@ import {
 } from "./chunk-XZN2HQWN.js";
 
 // node_modules/vitepress/dist/client/theme-default/index.js
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/fonts.css";
 
 // node_modules/vitepress/dist/client/theme-default/without-fonts.js
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/vars.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/base.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/icons.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/utils.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/custom-block.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code-group.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-doc.css";
-import "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css";
-import VPBadge from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
-import Layout from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/Layout.vue";
-import { default as default2 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
-import { default as default3 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPButton.vue";
-import { default as default4 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
-import { default as default5 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPFeatures.vue";
-import { default as default6 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeContent.vue";
-import { default as default7 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
-import { default as default8 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
-import { default as default9 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
-import { default as default10 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPImage.vue";
-import { default as default11 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPLink.vue";
-import { default as default12 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
-import { default as default13 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPSocialLink.vue";
-import { default as default14 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPSocialLinks.vue";
-import { default as default15 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPSponsors.vue";
-import { default as default16 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
-import { default as default17 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
-import { default as default18 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
-import { default as default19 } from "/home/danitsu/Proyectos/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/vars.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/base.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/icons.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/utils.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/custom-block.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-code-group.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-doc.css";
+import "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/styles/components/vp-sponsor.css";
+import VPBadge from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
+import Layout from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/Layout.vue";
+import { default as default2 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPBadge.vue";
+import { default as default3 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPButton.vue";
+import { default as default4 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPDocAsideSponsors.vue";
+import { default as default5 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPFeatures.vue";
+import { default as default6 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeContent.vue";
+import { default as default7 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeFeatures.vue";
+import { default as default8 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeHero.vue";
+import { default as default9 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPHomeSponsors.vue";
+import { default as default10 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPImage.vue";
+import { default as default11 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPLink.vue";
+import { default as default12 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPNavBarSearch.vue";
+import { default as default13 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPSocialLink.vue";
+import { default as default14 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPSocialLinks.vue";
+import { default as default15 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPSponsors.vue";
+import { default as default16 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamMembers.vue";
+import { default as default17 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamPage.vue";
+import { default as default18 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageSection.vue";
+import { default as default19 } from "/opt/development/github/PokeDocs/node_modules/vitepress/dist/client/theme-default/components/VPTeamPageTitle.vue";
 
 // node_modules/vitepress/dist/client/theme-default/composables/local-nav.js
 import { onContentUpdated } from "vitepress";
