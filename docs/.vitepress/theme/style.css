@@ -268,5 +268,26 @@ div[class*='language-'] {
   color: var(--vp-c-brand-1) !important;
 }
 
+/* Indicador de Último Autor del Commit de Git */
+.last-updated-author {
+  font-size: 0.85rem;
+  color: var(--vp-c-text-2);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: var(--vp-c-bg-soft);
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.last-updated-author .author-name {
+  font-weight: 600;
+  color: var(--vp-c-brand-1);
+}
+
+
 
 

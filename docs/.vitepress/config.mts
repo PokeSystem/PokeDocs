@@ -1,10 +1,22 @@
 import { defineConfig } from 'vitepress'
+import { execSync } from 'node:child_process'
 
 export default defineConfig({
   base: '/PokeDocs/',
   title: "PokeDocs",
   description: "Documentación oficial del PokeSystem construido sobre Laravel",
   lastUpdated: true,
+
+  // Extraer el nombre del último autor de Git para cada página
+  async transformPageData(pageData) {
+    try {
+      const author = execSync(`git log -1 --format="%an" "docs/${pageData.relativePath}"`).toString().trim()
+      pageData.frontmatter.lastAuthor = author || 'Equipo PokeSystem'
+    } catch (e) {
+      pageData.frontmatter.lastAuthor = 'Equipo PokeSystem'
+    }
+  },
+
   themeConfig: {
     // Configuración de búsqueda local totalmente traducida al español
     search: {
