@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
+
 export default defineConfig({
   base: '/PokeDocs/',
   title: "PokeDocs",
@@ -18,8 +18,9 @@ export default defineConfig({
       {
         text: 'Inicio',
         items: [
+          { text: 'Bienvenida', link: '/documentacion/index' },
           { text: 'Quienes Somos?', link: '/QuienesSomos' },
-        ]
+    ]
       },
       {
         text: 'Documentación',
@@ -30,7 +31,7 @@ export default defineConfig({
       }
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/PokeSystem/PokeDocs' }
     ]
   }
 })

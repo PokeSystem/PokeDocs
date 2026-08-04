@@ -1,6 +1,11 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: doc
+title: "¿Quiénes Somos?"
+head:
+  - - meta
+    - name: keywords
+      content: Información,Nosotros
 ---
 
+# ¿Quiénes Somos?
 
