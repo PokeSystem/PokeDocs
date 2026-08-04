@@ -251,4 +251,22 @@ body::before {
   transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease !important;
 }
 
+/* Estilización elegante para bloques de código */
+div[class*='language-'] {
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Callouts / Alertas personalizadas en verde esmeralda */
+.custom-block.tip, .custom-block.info {
+  border-color: var(--vp-c-brand-1) !important;
+  background-color: var(--vp-c-brand-soft) !important;
+}
+
+.custom-block.tip .custom-block-title, .custom-block.info .custom-block-title {
+  color: var(--vp-c-brand-1) !important;
+}
+
+
 
