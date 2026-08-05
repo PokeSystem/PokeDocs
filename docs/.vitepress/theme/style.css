@@ -369,4 +369,12 @@ div[class*='language-'] {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
 }
 
+/* Tiempo relativo en el pie de página del documento */
+.relative-time-label {
+  font-size: 0.85rem;
+  color: #34d399;
+  font-weight: 500;
+}
+
+
 

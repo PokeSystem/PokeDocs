@@ -10,6 +10,8 @@ docs/.vitepress/cache/
 .env
 .env.local
 .env.*.local
+*.local.md
+docs/drafts/
 .DS_Store
 Thumbs.db
 

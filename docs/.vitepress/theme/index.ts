@@ -8,6 +8,8 @@ import BackToTop from './BackToTop.vue'
 import HomeStats from './HomeStats.vue'
 // @ts-ignore
 import Breadcrumbs from './Breadcrumbs.vue'
+// @ts-ignore
+import ReadingProgress from './ReadingProgress.vue'
 import './style.css'
 
 export default {
@@ -131,8 +133,11 @@ export default {
   Layout() {
     const { frontmatter, page } = useData()
     return h(DefaultTheme.Layout, null, {
-      // Mostrar el foco de luz solo si la página utiliza layout: home (Hero)
-      'layout-top': () => (frontmatter.value?.layout === 'home' ? h('div', { id: 'mouse-spotlight' }) : null),
+      // Barra de progreso de lectura superior y spotlight en el home
+      'layout-top': () => h('div', null, [
+        h(ReadingProgress),
+        frontmatter.value?.layout === 'home' ? h('div', { id: 'mouse-spotlight' }) : null
+      ]),
       // Mostrar bloque rectangular de estadísticas y última entrada creada/modificada en el Home
       'home-hero-after': () => h(HomeStats),
       // Migas de Pan (Breadcrumbs) e indicador de tiempo de lectura
@@ -146,13 +151,14 @@ export default {
           ]) : null
         ])
       },
-      // Mostrar el último autor de la modificación justo sobre el pie de página del documento
+      // Mostrar el último autor y la fecha relativa de modificación sobre el pie de página
       'doc-footer-before': () => {
         const author = page.value.frontmatter?.lastAuthor
-        if (!author) return null
+        const relativeTime = page.value.frontmatter?.relativeLastUpdated
+        if (!author && !relativeTime) return null
         return h('div', { class: 'last-updated-author' }, [
-          h('span', { class: 'author-label' }, 'Última modificación por: '),
-          h('span', { class: 'author-name' }, author)
+          author ? h('span', { class: 'author-label' }, `Última modificación por: ${author}`) : null,
+          relativeTime ? h('span', { class: 'relative-time-label' }, ` (${relativeTime})`) : null
         ])
       },
       // Botón flotante 'Volver Arriba' en la parte inferior derecha
