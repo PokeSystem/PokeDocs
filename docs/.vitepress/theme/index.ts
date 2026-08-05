@@ -1,7 +1,10 @@
 import DefaultTheme from 'vitepress/theme'
 import { h, provide, onMounted, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
+// @ts-ignore
 import BackToTop from './BackToTop.vue'
+// @ts-ignore
+import HomeStats from './HomeStats.vue'
 import './style.css'
 
 export default {
@@ -112,12 +115,14 @@ export default {
     return h(DefaultTheme.Layout, null, {
       // Mostrar el foco de luz solo si la página utiliza layout: home (Hero)
       'layout-top': () => (frontmatter.value?.layout === 'home' ? h('div', { id: 'mouse-spotlight' }) : null),
+      // Mostrar bloque rectangular de estadísticas y última entrada creada/modificada en el Home
+      'home-hero-after': () => h(HomeStats),
       // Mostrar el último autor de la modificación justo sobre el pie de página del documento
       'doc-footer-before': () => {
         const author = page.value.frontmatter?.lastAuthor
         if (!author) return null
         return h('div', { class: 'last-updated-author' }, [
-          h('span', { class: 'author-label' }, '👤 Última modificación por: '),
+          h('span', { class: 'author-label' }, 'Última modificación por: '),
           h('span', { class: 'author-name' }, author)
         ])
       },
