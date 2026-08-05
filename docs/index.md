@@ -1,25 +1,23 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
   name: "PokeDocs"
   text: "Documentación del PokeSystem"
-  tagline: My great project tagline
+  tagline: "Todo lo que necesitas saber sobre la arquitectura, uso y desarrollo del PokeSystem en un solo lugar."
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Empezar a Leer
+      link: /documentacion/index
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: ¿Quiénes Somos?
+      link: /QuienesSomos
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: ⚡ Trabajado sobre Laravel
+    details: Aprovecha toda la potencia, seguridad y flexibilidad del framework de PHP líder en la industria.
+  - title: 📖 Documentación Completa
+    details: Desde referencias de código hasta guías paso a paso de cada módulo del sistema.
+  - title: 🛠️ Fácil de Contribuir
+    details: Toda la documentación está escrita en Markdown, facilitando que cualquier miembro del equipo pueda aportar.
 ---
-
