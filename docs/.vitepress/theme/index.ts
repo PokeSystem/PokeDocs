@@ -1,12 +1,13 @@
 import DefaultTheme from 'vitepress/theme'
-import { h, provide } from 'vue'
-import { useData } from 'vitepress'
+import { h, provide, onMounted, watch } from 'vue'
+import { useData, useRoute } from 'vitepress'
 import './style.css'
 
 export default {
   extends: DefaultTheme,
   setup() {
     const { isDark } = useData()
+    const route = useRoute()
 
     // Animación suave de expansión circular (View Transitions API) al cambiar el tema
     const enableTransitions = () =>
@@ -41,6 +42,69 @@ export default {
         }
       )
     })
+
+    // Renderizador de diagramas Mermaid seguro para cliente (evita pantalla en blanco y errores SSR)
+    const renderMermaid = async () => {
+      if (typeof window === 'undefined') return
+      const elements = document.querySelectorAll('pre.language-mermaid, div.language-mermaid, div[class*="language-mermaid"]')
+      if (elements.length === 0) return
+
+      try {
+        const mermaidModule = await import('mermaid')
+        const mermaid = mermaidModule.default
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: isDark.value ? 'dark' : 'default',
+          themeVariables: {
+            primaryColor: '#10b981',
+            primaryTextColor: '#ffffff',
+            primaryBorderColor: '#34d399',
+            lineColor: '#34d399',
+            secondaryColor: '#059669',
+            tertiaryColor: '#0d1117'
+          }
+        })
+
+        for (let i = 0; i < elements.length; i++) {
+          const el = elements[i] as HTMLElement
+          if (el.dataset.mermaidRendered === 'true') continue
+
+          const code = el.querySelector('code')?.innerText || el.innerText
+          if (!code || !code.trim()) continue
+
+          const container = document.createElement('div')
+          container.className = 'mermaid-rendered-container'
+          container.style.display = 'flex'
+          container.style.justifyContent = 'center'
+          container.style.margin = '1.5rem 0'
+          container.style.padding = '1.5rem'
+          container.style.background = 'rgba(13, 17, 23, 0.7)'
+          container.style.border = '1px solid rgba(16, 185, 129, 0.3)'
+          container.style.borderRadius = '12px'
+          container.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)'
+
+          const id = `mermaid-svg-${Math.random().toString(36).substring(2, 9)}`
+          const { svg } = await mermaid.render(id, code)
+          container.innerHTML = svg
+          
+          el.dataset.mermaidRendered = 'true'
+          el.parentNode?.replaceChild(container, el)
+        }
+      } catch (err) {
+        console.error('Error rendering Mermaid diagram:', err)
+      }
+    }
+
+    onMounted(() => {
+      setTimeout(renderMermaid, 200)
+    })
+
+    watch(
+      () => route.path,
+      () => {
+        setTimeout(renderMermaid, 300)
+      }
+    )
   },
   Layout() {
     const { frontmatter, page } = useData()

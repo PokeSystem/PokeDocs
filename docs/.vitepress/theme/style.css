@@ -288,6 +288,51 @@ div[class*='language-'] {
   color: var(--vp-c-brand-1);
 }
 
+/* ==========================================================================
+   RESALTADO DE SECCIÓN ACTIVA (Barra Superior y Barra Lateral)
+   ========================================================================== */
 
+/* Resaltado de opción activa en el Menú Superior (Top Nav Bar) */
+.VPNavBarMenuLink.active,
+.VPNavBarMenuLink.is-active {
+  color: #34d399 !important;
+  font-weight: 700 !important;
+  position: relative;
+}
 
+.VPNavBarMenuLink.active::after,
+.VPNavBarMenuLink.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  border-radius: 2px;
+  box-shadow: 0 0 8px #10b981;
+}
 
+/* Resaltado de elemento activo en la Barra Lateral (Sidebar) - Para todos los niveles y subpáginas */
+.VPSidebarItem .link.is-active,
+.VPSidebarItem.is-active > .item .link,
+.VPSidebarItem.is-active > .link,
+.VPSidebarItem.level-1.is-active > .item .link,
+.VPSidebarItem.level-2.is-active > .item .link,
+.VPSidebarItem .is-active,
+a.VPLink.is-active {
+  background: rgba(16, 185, 129, 0.14) !important;
+  border-radius: 8px !important;
+  padding-left: 10px !important;
+  border-left: 3px solid #10b981 !important;
+  transition: all 0.2s ease !important;
+}
+
+.VPSidebarItem .link.is-active .text,
+.VPSidebarItem.is-active > .item .link .text,
+.VPSidebarItem.is-active > .link .text,
+.VPSidebarItem .is-active .text,
+a.VPLink.is-active .text {
+  color: #34d399 !important;
+  font-weight: 700 !important;
+}

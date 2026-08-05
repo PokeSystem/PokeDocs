@@ -46,11 +46,11 @@ export default defineConfig({
       }
     },
 
-    // Navegación superior
+    // Navegación superior con resaltado de sección activa (activeMatch)
     nav: [
-      { text: 'Inicio', link: '/' },
-      { text: 'Documentación', link: '/documentacion/index' },
-      { text: '¿Quiénes Somos?', link: '/QuienesSomos' }
+      { text: 'Inicio', link: '/', activeMatch: '^/$' },
+      { text: 'Documentación', link: '/documentacion/index', activeMatch: '^/documentacion/' },
+      { text: '¿Quiénes Somos?', link: '/QuienesSomos', activeMatch: '^/QuienesSomos' }
     ],
 
     // Estructura organizada de la barra lateral
@@ -61,6 +61,13 @@ export default defineConfig({
         items: [
           { text: 'Índice General', link: '/documentacion/index' },
           { text: '¿Quiénes Somos?', link: '/QuienesSomos' }
+        ]
+      },
+      {
+        text: '🔑 Módulos del Sistema',
+        collapsed: false,
+        items: [
+          { text: 'Inicio de Sesión (Login)', link: '/documentacion/Login/index' }
         ]
       },
       {
@@ -83,7 +90,7 @@ export default defineConfig({
       message: 'Documentación desarrollada para PokeSystem • Basado en Laravel',
       copyright: 'Copyright © 2026 PokeSystem'
     },
-
+    
     // Traducción de elementos de UI al español
     outline: {
       label: 'En esta página'
