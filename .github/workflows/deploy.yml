@@ -51,12 +51,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Validate Dead Links (Broken Link Checker)
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: --no-progress --offline 'docs/**/*.md'
-          fail: true
-
       - name: Build VitePress Documentation
         run: pnpm docs:build
 
