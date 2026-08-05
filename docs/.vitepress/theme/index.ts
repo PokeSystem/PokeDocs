@@ -117,6 +117,14 @@ export default {
       'layout-top': () => (frontmatter.value?.layout === 'home' ? h('div', { id: 'mouse-spotlight' }) : null),
       // Mostrar bloque rectangular de estadísticas y última entrada creada/modificada en el Home
       'home-hero-after': () => h(HomeStats),
+      // Indicador de tiempo estimado de lectura en la parte superior del documento
+      'doc-before': () => {
+        const time = page.value.frontmatter?.readingTime
+        if (!time || frontmatter.value?.layout === 'home') return null
+        return h('div', { class: 'reading-time-badge' }, [
+          h('span', { class: 'reading-time-label' }, `Tiempo estimado de lectura: ~${time} min`)
+        ])
+      },
       // Mostrar el último autor de la modificación justo sobre el pie de página del documento
       'doc-footer-before': () => {
         const author = page.value.frontmatter?.lastAuthor

@@ -7,7 +7,7 @@ export default defineConfig({
   description: "Documentación oficial del PokeSystem construido sobre Laravel",
   lastUpdated: true,
 
-  // Extraer el nombre del último autor de Git para cada página
+  // Extraer autor de Git y calcular tiempo de lectura estimado
   async transformPageData(pageData) {
     try {
       const author = execSync(`git log -1 --format="%an" "docs/${pageData.relativePath}"`).toString().trim()
@@ -15,6 +15,11 @@ export default defineConfig({
     } catch (e) {
       pageData.frontmatter.lastAuthor = 'Equipo PokeSystem'
     }
+
+    // Estimar tiempo de lectura (~200 palabras/min)
+    const contentText = (pageData as any).content || ''
+    const wordCount = contentText.trim().split(/\s+/).filter(Boolean).length
+    pageData.frontmatter.readingTime = Math.max(1, Math.ceil(wordCount / 200))
   },
 
   themeConfig: {

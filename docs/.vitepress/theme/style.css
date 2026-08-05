@@ -330,3 +330,23 @@ div[class*='language-'] {
   color: #34d399 !important;
   font-weight: 700 !important;
 }
+
+/* Badge de Tiempo Estimado de Lectura */
+.reading-time-badge {
+  font-size: 0.82rem;
+  color: #8b949e;
+  margin-bottom: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.reading-time-badge .reading-time-label {
+  font-weight: 600;
+  color: #34d399;
+}
+
