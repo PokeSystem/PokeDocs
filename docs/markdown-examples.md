@@ -250,3 +250,18 @@ sequenceDiagram
     API Laravel-->>Frontend: Retorna Token Bearer
     Frontend-->>Usuario: Redirección al Dashboard
 ```
+
+---
+
+## 10. Insertar Imágenes con Zoom Interactivo
+
+Para agregar capturas de pantalla, diagramas o ilustraciones a tu documentación, puedes guardar tus archivos de imagen en la carpeta `public/` (por ejemplo en `docs/public/images/`).
+
+### ✍️ Lo que debes escribir:
+
+```md
+![Descripción de la imagen](/images/ejemplo.png)
+```
+
+> 💡 **Zoom Interactivo Automático:** Todas las imágenes agregadas en los documentos cuentan con soporte de zoom interactivo. Al hacer clic sobre cualquier imagen en la documentación, se ampliará suavemente a pantalla completa.
+

@@ -1,10 +1,13 @@
 import DefaultTheme from 'vitepress/theme'
 import { h, provide, onMounted, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
+import mediumZoom from 'medium-zoom'
 // @ts-ignore
 import BackToTop from './BackToTop.vue'
 // @ts-ignore
 import HomeStats from './HomeStats.vue'
+// @ts-ignore
+import Breadcrumbs from './Breadcrumbs.vue'
 import './style.css'
 
 export default {
@@ -46,6 +49,15 @@ export default {
         }
       )
     })
+
+    // Inicializador de Zoom Interactivo para imágenes en documentos (medium-zoom)
+    const initZoom = () => {
+      if (typeof window !== 'undefined') {
+        mediumZoom('.vp-doc img', {
+          background: isDark.value ? 'rgba(13, 17, 23, 0.92)' : 'rgba(255, 255, 255, 0.92)'
+        })
+      }
+    }
 
     // Renderizador de diagramas Mermaid seguro para cliente (evita pantalla en blanco y errores SSR)
     const renderMermaid = async () => {
@@ -100,13 +112,19 @@ export default {
     }
 
     onMounted(() => {
-      setTimeout(renderMermaid, 200)
+      setTimeout(() => {
+        renderMermaid()
+        initZoom()
+      }, 250)
     })
 
     watch(
       () => route.path,
       () => {
-        setTimeout(renderMermaid, 300)
+        setTimeout(() => {
+          renderMermaid()
+          initZoom()
+        }, 300)
       }
     )
   },
@@ -117,12 +135,15 @@ export default {
       'layout-top': () => (frontmatter.value?.layout === 'home' ? h('div', { id: 'mouse-spotlight' }) : null),
       // Mostrar bloque rectangular de estadísticas y última entrada creada/modificada en el Home
       'home-hero-after': () => h(HomeStats),
-      // Indicador de tiempo estimado de lectura en la parte superior del documento
+      // Migas de Pan (Breadcrumbs) e indicador de tiempo de lectura
       'doc-before': () => {
+        if (frontmatter.value?.layout === 'home') return null
         const time = page.value.frontmatter?.readingTime
-        if (!time || frontmatter.value?.layout === 'home') return null
-        return h('div', { class: 'reading-time-badge' }, [
-          h('span', { class: 'reading-time-label' }, `Tiempo estimado de lectura: ~${time} min`)
+        return h('div', { class: 'doc-header-meta' }, [
+          h(Breadcrumbs),
+          time ? h('div', { class: 'reading-time-badge' }, [
+            h('span', { class: 'reading-time-label' }, `Tiempo estimado de lectura: ~${time} min`)
+          ]) : null
         ])
       },
       // Mostrar el último autor de la modificación justo sobre el pie de página del documento

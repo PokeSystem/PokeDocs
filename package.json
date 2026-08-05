@@ -19,5 +19,8 @@
     "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17",
     "vue": "^3.5.40"
+  },
+  "dependencies": {
+    "medium-zoom": "^1.1.0"
   }
 }
