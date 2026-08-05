@@ -216,3 +216,37 @@ Ideal para listas de datos o documentación de rutas API.
 | :--- | :--- | :---: |
 | `GET` | `/api/v1/pokemon` | <Badge type="tip" text="Activo" /> |
 | `POST` | `/api/v1/pokemon` | <Badge type="warning" text="Pruebas" /> |
+
+---
+
+## 9. Crear Diagramas de Flujo Interactivos (Mermaid)
+
+Para dibujar diagramas de secuencia, procesos o flujos de datos sin necesidad de subir imágenes externas, utiliza la palabra `mermaid` en el bloque de código.
+
+### ✍️ Lo que debes escribir:
+
+````md
+```mermaid
+sequenceDiagram
+    autonumber
+    Usuario->>Frontend: Ingresa correo y contraseña
+    Frontend->>API Laravel: Petición POST /api/login
+    API Laravel->>Base de Datos: Verificar credenciales
+    Base de Datos-->>API Laravel: Datos del usuario válidos
+    API Laravel-->>Frontend: Retorna Token Bearer
+    Frontend-->>Usuario: Redirección al Dashboard
+```
+````
+
+### 👁️ Resultado final:
+
+```mermaid
+sequenceDiagram
+    autonumber
+    Usuario->>Frontend: Ingresa correo y contraseña
+    Frontend->>API Laravel: Petición POST /api/login
+    API Laravel->>Base de Datos: Verificar credenciales
+    Base de Datos-->>API Laravel: Datos del usuario válidos
+    API Laravel-->>Frontend: Retorna Token Bearer
+    Frontend-->>Usuario: Redirección al Dashboard
+```

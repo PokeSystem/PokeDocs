@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { h, provide, onMounted, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
+import BackToTop from './BackToTop.vue'
 import './style.css'
 
 export default {
@@ -119,7 +120,9 @@ export default {
           h('span', { class: 'author-label' }, '👤 Última modificación por: '),
           h('span', { class: 'author-name' }, author)
         ])
-      }
+      },
+      // Botón flotante 'Volver Arriba' en la parte inferior derecha
+      'layout-bottom': () => h(BackToTop)
     })
   },
   enhanceApp() {

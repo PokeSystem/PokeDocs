@@ -313,14 +313,10 @@ div[class*='language-'] {
   box-shadow: 0 0 8px #10b981;
 }
 
-/* Resaltado de elemento activo en la Barra Lateral (Sidebar) - Para todos los niveles y subpáginas */
+/* Resaltado de elemento activo en la Barra Lateral (Sidebar) - Único borde y cápsula */
+.VPSidebarItem a.VPLink.is-active,
 .VPSidebarItem .link.is-active,
-.VPSidebarItem.is-active > .item .link,
-.VPSidebarItem.is-active > .link,
-.VPSidebarItem.level-1.is-active > .item .link,
-.VPSidebarItem.level-2.is-active > .item .link,
-.VPSidebarItem .is-active,
-a.VPLink.is-active {
+.VPSidebarItem .item .link.is-active {
   background: rgba(16, 185, 129, 0.14) !important;
   border-radius: 8px !important;
   padding-left: 10px !important;
@@ -328,11 +324,9 @@ a.VPLink.is-active {
   transition: all 0.2s ease !important;
 }
 
+.VPSidebarItem a.VPLink.is-active .text,
 .VPSidebarItem .link.is-active .text,
-.VPSidebarItem.is-active > .item .link .text,
-.VPSidebarItem.is-active > .link .text,
-.VPSidebarItem .is-active .text,
-a.VPLink.is-active .text {
+.VPSidebarItem .item .link.is-active .text {
   color: #34d399 !important;
   font-weight: 700 !important;
 }
